@@ -1,0 +1,8 @@
+public_html
+mysql-data
+.DS_Store
+*.tar.gz
+*.mysql.gz
+*.sql.gz
+*.sql
+bash
