@@ -2,6 +2,7 @@ version: '3.9'
 services:
   drupal:
     build: .
+    container_name: ${CONTAINER_NAME}
     ports:
       - 8080:80
     volumes:

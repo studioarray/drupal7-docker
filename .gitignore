@@ -1,3 +1,4 @@
+.env
 public_html
 mysql-data
 .DS_Store
