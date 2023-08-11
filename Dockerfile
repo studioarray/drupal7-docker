@@ -42,9 +42,10 @@ RUN composer global require drush/drush:^8.0
 # Add Composer's global bin directory to the PATH
 ENV PATH="/root/.composer/vendor/bin:${PATH}"
 
-# Update the PHP.ini file, enable <? ?> tags and quieten logging.
+# Update the PHP.ini file, enable <? ?> tags and enable logging.
 RUN echo "short_open_tag = On" >> /usr/local/etc/php/php.ini
-RUN echo "error_reporting = E_ERROR | E_WARNING | E_PARSE" >> /usr/local/etc/php/php.ini
+RUN echo "error_reporting = E_ALL" >> /usr/local/etc/php/php.ini
+RUN echo "display_errors = On" >> /usr/local/etc/php/php.ini
 
 # Update the PHP memory and upload size limits
 RUN echo "memory_limit = 512M" >> /usr/local/etc/php/php.ini
