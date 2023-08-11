@@ -46,6 +46,11 @@ ENV PATH="/root/.composer/vendor/bin:${PATH}"
 RUN echo "short_open_tag = On" >> /usr/local/etc/php/php.ini
 RUN echo "error_reporting = E_ERROR | E_WARNING | E_PARSE" >> /usr/local/etc/php/php.ini
 
+# Update the PHP memory and upload size limits
+RUN echo "memory_limit = 512M" >> /usr/local/etc/php/php.ini
+RUN echo "upload_max_filesize = 10M" >> /usr/local/etc/php/php.ini
+RUN echo "post_max_size = 10M" >> /usr/local/etc/php/php.ini
+
 # Expose apache.
 EXPOSE 80
 
